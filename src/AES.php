@@ -12,13 +12,26 @@ class AES {
      * @desc cipher的值为密钥长度可以为128、192、256
      * @var  string
      */
-    private $__cipher = MCRYPT_RIJNDAEL_128;
+    private $__cipher = MCRYPT_RIJNDAEL_256;
     /**
      * @desc 模式 CBC ECB
      * @var  string
      */
     private $__mode = MCRYPT_MODE_CBC;
 
+    /**
+     * 设置加密参数
+     *
+     * @param  int $cipher = MCRYPT_RIJNDAEL_256 
+     * @param  int $mode 
+     * @return self
+     */
+    public function cipher($cipher = MCRYPT_RIJNDAEL_256, $mode = MCRYPT_MODE_CBC) {
+        $this->__cipher = $cipher;
+        $this->__mode   = $mode;
+        return $this;
+    }
+    
     /**
      * @param  string $input 明文
      * @param  string $key   16个字符串

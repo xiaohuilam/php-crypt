@@ -12,7 +12,7 @@ class AES {
      * @desc cipher的值为密钥长度可以为128、192、256
      * @var  string
      */
-    private $__cipher = MCRYPT_RIJNDAEL_256;
+    private $__cipher = MCRYPT_RIJNDAEL_128;
     /**
      * @desc 模式 CBC ECB
      * @var  string
